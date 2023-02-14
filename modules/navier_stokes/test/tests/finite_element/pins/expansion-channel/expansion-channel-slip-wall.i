@@ -168,7 +168,7 @@
     variable = vel_x
     boundary = '1'
     component   = 0
-    #p_fn = 1.05e5
+    bc_type = "VelocityInlet"
     v_fn = 1
   []
   # Outlet
@@ -177,13 +177,15 @@
     variable = vel_x
     boundary = '2'
     component   = 0
+    bc_type = "Pressure"
     p_fn = 1e5
   []
   # Walls (left and right walls)
   [vx_wall]
-    type = INSFEFluidWallMomentumBC
+    type = INSFEFluidMomentumBC
     variable = vel_x
     boundary = '3 4'
+    bc_type = "Wall"
     component = 0
   []
 
@@ -194,6 +196,7 @@
     variable = vel_y
     boundary = '1'
     component   = 1
+    bc_type = "VelocityInlet"
     v_fn = 1
   []
   # Outlet
@@ -202,13 +205,15 @@
     variable = vel_y
     boundary = '2'
     component   = 1
+    bc_type = "Pressure"
     p_fn = 1e5
   []
   # Walls (left and right walls)
   [vy_wall]
-    type = INSFEFluidWallMomentumBC
+    type = INSFEFluidMomentumBC
     variable = vel_y
     boundary = '3 4'
+    bc_type = "Wall"
     component = 1
   []
 

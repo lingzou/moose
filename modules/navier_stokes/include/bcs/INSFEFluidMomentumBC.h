@@ -31,6 +31,8 @@ protected:
   virtual Real computeQpOffDiagJacobian(unsigned int jvar) override;
 
 private:
+  const MooseEnum & _bc_type;
+
   unsigned int _component;
   const MaterialProperty<Real> & _mu;
   const MaterialProperty<Real> & _mu_t;
